@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a simple console-based Rock, Paper, Scissors game implemented in C#. If you don't have a friend to play with, this program acts as your virtual playmate.
+This is a simple console-based Rock, Paper, Scissors game implemented in C#. If you don't have a friend to play with, this program acts as your virtual playmate. Winner is the one who takes 3 rounds
 
 ## How to Play
 
