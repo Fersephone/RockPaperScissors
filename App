@@ -12,29 +12,42 @@ namespace RockPaperScissors
     {
         static void Main(string[] args)
         {
+            int userWins = 0;
+            int computerWins = 0;
 
-            Console.WriteLine("Enter your choice\n");
-            Console.WriteLine("1. Rock 2. Paper 3. Scissors\n");
-
-            int userChoice = Convert.ToInt32(Console.ReadLine());
-
-            Random rnd = new Random();
-            int randomNumber = rnd.Next(1, 4);
-            Console.WriteLine("Computer's Choice: " + randomNumber);
-
-            if (randomNumber == userChoice)
+            while (userWins < 3 && computerWins < 3)
             {
-                Console.WriteLine("Tie");
+                Console.WriteLine("Enter your choice\n");
+                Console.WriteLine("1. Rock 2. Paper 3. Scissors\n");
+
+                int userChoice = Convert.ToInt32(Console.ReadLine());
+
+                Random rnd = new Random();
+                int randomNumber = rnd.Next(1, 4);
+                Console.WriteLine("Computer's Choice: " + randomNumber);
+
+                if (randomNumber == userChoice)
+                {
+                    Console.WriteLine("Tie");
+
+                }
+                else if ((userChoice == 1 && randomNumber == 3) || (userChoice == 2 && randomNumber == 1) || (userChoice == 3 && randomNumber == 2))
+                {
+                    Console.WriteLine("You Win");
+                    userWins++;
+                }
+                else { 
+                    Console.WriteLine("Defeated"); 
+                    computerWins++;
+                }
+                Console.WriteLine($"Score : User {userWins} - {computerWins}");
 
             }
-            else if ((userChoice == 1 && randomNumber == 3) || (userChoice == 2 && randomNumber == 1) || (userChoice == 3 && randomNumber == 2))
+            if (userWins == 3)
             {
-                Console.WriteLine("You Win");
+                Console.WriteLine(" You won, but your virtual friend didn't feel satisfied :/ ");
             }
-            else { Console.WriteLine("Defeated"); }
-
-
-
+            else { Console.WriteLine("Defeated by a non-human, huh?"); }
 
         }
     }
